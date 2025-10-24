@@ -55,8 +55,18 @@
 <body>
     <h1>Vuyisanani</h1>
     <div class="contact">
-        <a href="mailto:vuyisanani.inbox@gmail.com">vuyisanani.inbox [at] gmail [dot] com</a>
-    </div>
+    <span id="email">Loading...</span>
+	</div>
+
+	<script>
+	    // obfuscate email
+	    const user = 'vuyisanani.inbox';
+	    const domain = 'gmail.com';
+	    const email = user + '@' + domain;
+	    
+	    document.getElementById('email').innerHTML = 
+	        `<a href="mailto:${email}">${user} [at] ${domain.replace('.', ' [dot] ')}</a>`;
+	</script>
     
     <p>
     	Awe! I'm a first year IT student at Nelson Mandela University.
@@ -73,3 +83,4 @@
 </body>
 
 </html>
+
