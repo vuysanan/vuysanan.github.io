@@ -1,0 +1,142 @@
+﻿/* --- CSS Variables (Theme) --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --accent-color: #007bff;
+    --accent-hover: #0056b3;
+    --border-color: #eeeeee;
+    --card-bg: #fdfdfd;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #eeeeee;
+        --text-muted: #aaaaaa;
+        --accent-color: #3399ff;
+        --accent-hover: #66bbff;
+        --border-color: #333333;
+        --card-bg: #252525;
+    }
+}
+/* --- End of Theme --- */
+
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+
+/* --- Header & Nav --- */
+header {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+.links {
+    display: flex;
+    gap: 20px; /* Modern way to add space */
+    font-size: 1.1em;
+}
+
+
+/* --- Project Grid --- */
+.project-grid {
+    display: grid;
+    /* This is responsive: it creates columns that are at least 250px wide,
+       but will stretch to fill the space (1fr). */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+}
+
+.project-card.soon {
+    display: grid;
+    place-items: center;
+    color: var(--text-muted);
+    font-style: italic;
+    min-height: 150px;
+}
+
+.project-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a {
+    font-weight: bold;
+}
+
+
+/* --- Contact & Footer --- */
+.contact p {
+    font-size: 1.1em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
