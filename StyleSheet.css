@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #1a1a1a;
-        --text-color: #eeeeee;
+        --text-color: #eeeeee; /* White/Near-white text */
         --text-muted: #aaaaaa;
         --accent-color: #3399ff;
         --accent-hover: #66bbff;
@@ -31,12 +31,13 @@ body {
     padding: 40px 20px;
     line-height: 1.6;
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var(--text-color); /* All primary text is this color (white in dark mode) */
 }
 
 h1, h2, h3 {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
+    /* Headers inherit var(--text-color) from body, fulfilling the 'white text' request in dark mode. */
 }
 
 h1 {
@@ -51,7 +52,8 @@ h2 {
 }
 
 a {
-    color: var(--accent-color);
+    /* General links are now var(--text-color) (white in dark mode) */
+    color: var(--text-color); 
     text-decoration: none;
 }
 
@@ -60,32 +62,21 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Removed: .links (unused) */
+/* Removed: header styles (unused) */
 
-/* --- Header & Nav --- */
-header {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping on small screens */
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-header h1 {
-    margin-bottom: 0;
-}
-
-.links {
-    display: flex;
-    gap: 20px; /* Modern way to add space */
+.bio-text {
+    color: var(--text-muted);
     font-size: 1.1em;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 35px;
 }
 
 
 /* --- Project Grid --- */
 .project-grid {
     display: grid;
-    /* This is responsive: it creates columns that are at least 250px wide,
-       but will stretch to fill the space (1fr). */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
@@ -103,9 +94,17 @@ header h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Set project card text to be muted */
+.project-card p,
+.project-card ul,
+.project-card li {
+    color: var(--text-muted);
+}
+
 .project-card h3 {
     margin-top: 0;
-    color: var(--accent-color);
+    /* Ensure project card headers use the main text color */
+    color: var(--text-color);
 }
 
 .project-card.soon {
@@ -132,6 +131,32 @@ header h1 {
     font-size: 1.1em;
 }
 
+/* Style contact links as buttons */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-muted); /* Still holds the email text color */
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.contact-links a:hover {
+    /* Muted on hover */
+    color: var(--text-muted); 
+    border-color: var(--text-muted);
+    text-decoration: none;
+}
+
 footer {
     text-align: center;
     margin-top: 60px;
@@ -140,3 +165,4 @@ footer {
     color: var(--text-muted);
     font-size: 0.9em;
 }
+/* Removed extra closing brace } */
