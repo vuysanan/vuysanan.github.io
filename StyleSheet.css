@@ -7,6 +7,7 @@
     --accent-hover: #0056b3;
     --border-color: #eeeeee;
     --card-bg: #fdfdfd;
+    --tech-stack-color: #e67e22; /* Normal Orange */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +19,7 @@
         --accent-hover: #66bbff;
         --border-color: #333333;
         --card-bg: #252525;
+        --tech-stack-color: #f39c12; /* A slightly lighter/brighter orange for dark backgrounds */
     }
 }
 /* --- End of Theme --- */
@@ -31,13 +33,12 @@ body {
     padding: 40px 20px;
     line-height: 1.6;
     background-color: var(--bg-color);
-    color: var(--text-color); /* All primary text is this color (white in dark mode) */
+    color: var(--text-color);
 }
 
 h1, h2, h3 {
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    /* Headers inherit var(--text-color) from body, fulfilling the 'white text' request in dark mode. */
 }
 
 h1 {
@@ -52,18 +53,14 @@ h2 {
 }
 
 a {
-    /* General links are now var(--text-color) (white in dark mode) */
     color: var(--text-color); 
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
+    color: var(--tech-stack-color);
+    text-decoration: none;
 }
-
-/* Removed: .links (unused) */
-/* Removed: header styles (unused) */
 
 .bio-text {
     color: var(--text-muted);
@@ -87,6 +84,9 @@ a:hover {
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -94,29 +94,35 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+.project-info {
+    /* This makes the info take up all available space, pushing links down */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-stack {
+    color: var(--tech-stack-color);
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 /* Set project card text to be muted */
-.project-card p,
-.project-card ul,
-.project-card li {
+.description {
     color: var(--text-muted);
 }
 
 .project-card h3 {
     margin-top: 0;
-    /* Ensure project card headers use the main text color */
     color: var(--text-color);
-}
-
-.project-card.soon {
-    display: grid;
-    place-items: center;
-    color: var(--text-muted);
-    font-style: italic;
-    min-height: 150px;
 }
 
 .project-links {
     margin-top: 15px;
+    margin-top: auto;
     display: flex;
     gap: 15px;
 }
@@ -137,7 +143,7 @@ a:hover {
     flex-wrap: wrap;
     align-items: center;
     gap: 15px;
-    color: var(--text-muted); /* Still holds the email text color */
+    color: var(--text-muted);
 }
 
 .contact-links a {
@@ -165,4 +171,3 @@ footer {
     color: var(--text-muted);
     font-size: 0.9em;
 }
-/* Removed extra closing brace } */
