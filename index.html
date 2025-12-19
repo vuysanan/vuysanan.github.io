@@ -3,46 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Vuyisanani Mbebe, an IT Student and Software Developer specializing in C# and .NET development.">
+
     <title>Vuyisanani Mbebe</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <header>
+        <h1>Vuyisanani Mbebe</h1>
+        
+        <span id="email-loader">Loading...</span>
+
+        <!--<img src="IMG_9501.png" alt="Vuyisanani" class="image">-->
+    </header>
+
+    <section class="bio">
+        <p>Hello, I'm a software developer based in Gqeberha and currently pursuing a bachelor's degree in IT at Nelson Mandela University.</p>
+    </section>
+
     <main>
-        <h1>Hey, I'm Vuyisanani</h1>
-        <p class="bio-text">
-             A Software Developer and currently pursuing a bachelor's degree in IT at Nelson Mandela University.
-        </p>
         <section class="projects">
             <h2>Projects</h2>
+            
             <div class="project-grid">
-                
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Test Password Strength</h3>
-        
-                        <p class="tech-stack">C# | .NET | Regex | Procedural Logic</p>
-        
-                        <p class="description">
-                            A foundational console application that evaluates password complexity using 
-                            <strong>Procedural Programming</strong> patterns. Utilizes <strong>Regular Expressions (Regex)</strong> 
-                            to validate security criteria including character diversity and length strings. 
-                            Features interactive user feedback loops and conditional scoring logic to assign strength ratings.
-                        </p>
-        
-                        <div class="project-links">
-                            <a href="https://github.com/vuysanan/2nd-Project---Test-Password-Strength" target="_blank" rel="noopener noreferrer">View Source Code</a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Bug Tracking System</h3>
@@ -56,23 +41,33 @@
                             Includes a "Soft Delete" architecture to maintain database integrity 
                             and persistent storage using text file parsing.
                         </p>
+
                         <div class="project-links">
-                            <a href="https://github.com/vuysanan/BugTracker---Console" target="_blank" rel="noopener noreferrer">View Source Code</a>
+                            <a href="https://github.com/vuysanan/BugTracker---Console" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
                         </div>
                     </div>
                 </div>
 
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Generate & Test Passwords</h3>
+        
+                        <p class="tech-stack">C# | .NET | Regex | Procedural Logic</p>
+        
+                        <p class="description">
+                            Makes use of Random and StringBuilder classes to generate passwords.
+                            <strong>Procedural Programming</strong> patterns and <strong>Regular Expressions (Regex)</strong> 
+                            are utilized to validate security criteria including character diversity and length strings. 
+                            Features interactive user feedback loops and conditional scoring logic to assign strength ratings.
+                        </p>
+        
+                        <div class="project-links">
+                            <a href="https://github.com/vuysanan/2nd-Project---Test-Password-Strength" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section class="contact">
-            <h2>Get in Touch</h2>
-            <nav class="contact-links">
-                <span id="email-loader">Loading...</span>
-                <a href="https://github.com/vuysanan" target="_blank" rel="noopener noreferrer" >GitHub</a>
-                <a href="https://linkedin.com/in/vuyisanani-mbebe-91b01920a/" target="_blank" rel="noopener noreferrer" >LinkedIn</a>
-                <a href="https://instagram.com/vuysanan" target="_blank" rel="noopener noreferrer" >Instagram</a>
-            </nav>
         </section>
     </main>
 
@@ -80,21 +75,9 @@
         <p>&copy; 2025 Vuyisanani Mbebe</p>
     </footer>
 
-    <script>
-        // Obfuscate email
-        const user = 'vuyisanani.inbox';
-        const domain = 'gmail.com';
-        const email = user + '@' + domain;
-        
-        // Find the span and replace its content
-        const emailEl = document.getElementById('email-loader');
-        if (emailEl) {
-            emailEl.innerHTML = `<a href="mailto:${email}">${email}</a>`;
-        }
-    </script>
+    
+
+    <script src="script.js"></script>
+
 </body>
-
 </html>
-
-
-
