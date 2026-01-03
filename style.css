@@ -3,8 +3,6 @@
     --bg-color: #ffffff;
     --text-color: #333333;
     --text-muted: #666666;
-    --accent-color: #007bff;
-    --accent-hover: #0056b3;
     --border-color: #eeeeee;
     --card-bg: #fdfdfd;
     --tech-stack-color: #e67e22; /* Normal Orange */
@@ -15,8 +13,6 @@
         --bg-color: #1a1a1a;
         --text-color: #eeeeee; /* White/Near-white text */
         --text-muted: #aaaaaa;
-        --accent-color: #3399ff;
-        --accent-hover: #66bbff;
         --border-color: #333333;
         --card-bg: #252525;
         --tech-stack-color: #f39c12; /* A slightly lighter/brighter orange for dark backgrounds */
@@ -26,6 +22,7 @@
 
 
 /* --- Global Styles --- */
+
 body {
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 300;
@@ -59,11 +56,14 @@ h2 {
 a {
     color: var(--text-muted); 
     text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out; /* Smooth transition */
 }
 
 a:hover {
     color: var(--tech-stack-color);
     text-decoration: none;
+    transform:scale(1.01);
 }
 
 .bio-text {
