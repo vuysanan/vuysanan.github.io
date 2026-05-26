@@ -20,7 +20,7 @@
 
     <main>
         <section id="bio">
-            <p>Hello, I'm a software developer based in Gqeberha and currently pursuing a bachelor's degree in IT at Nelson Mandela University.</p>
+            <p>Hello, I'm a software engineer based in Gqeberha and currently pursuing a bachelor's degree in IT at Nelson Mandela University.</p>
             <div class="contact">
                 <p>
                     <a href="https://github.com/vuysanan" target="_blank" rel="noopener noreferrer" style="margin-right: 15px;">GitHub</a>
@@ -32,58 +32,99 @@
         <section id="projects">
             <h2>Projects</h2>
             
-            <div class="project-grid">
+            <!-- Web Apps Section -->
+            <h3>Web Apps & Prototyping</h3>
+            <div class="horizontal-scroll">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Chess Analytics</h3>
+                        <p class="tech-stack"> R | Python | ShinyApp Package</p>
+                        <p class="description">
+                            A data-driven web application built using R's ShinyApp package, designed to analyze chess game data. 
+                            The app provides informative <strong>visualizations and insights</strong> into my performances as a new player. Python is used for
+                            getting data via <strong>Chess.com's API</strong> and R for applying statistical methods and UI rendering.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://vuysanan.shinyapps.io/chess_analytics/" target="_blank" rel="noopener noreferrer">View App ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Shopper's Delight</h3>
+                        <p class="tech-stack">Figma | Draw.io | UML </p>
+                        <p class="description">
+                            An online shopping platform prototype designed to <strong>meet stakeholder requirements</strong> and <strong>enhance user experience</strong> through intuitive navigation
+                            and seamless flow of operations. The design incorporates a clean, modern aesthetic with a focus on usability and accessibility. All stemming from use cases.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/vuysanan/Online-Shopping-System" target="_blank" rel="noopener noreferrer">View Prototype ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Windows Apps Section -->
+            <h3>Windows Apps</h3>
+            <div class="horizontal-scroll">
                 <div class="project-card">
                     <div class="project-info">
                         <h3>HealthCare File Management</h3>
-
-                        <p class="tech-stack">C# | Windows Forms User Interface | Error Handling </p>
-
+                        <p class="tech-stack">C# | Windows Forms | MySQL | UML | ERD</p>
                         <p class="description">
-                            This project is still in-progress as I am actively working to improve 
-                            it. It is a simple desktop application for managing patient files. 
-                            The system allows users to input and view information for individual patients, 
-                            providing a foundational structure for storing and organizing healthcare data.
+                            <strong>[Work in Progress]</strong> A database-driven desktop <strong>CRUD</strong> application for managing patient files and visit records. 
+                            Currently transitioning from an in-memory data structure to a <strong>MySQL relational database</strong> backend based on architectural planning with a UML Use Case diagram and an Entity Relationship diagram.
                         </p>
                         <div class="project-links">
-                            <a href="https://github.com/vuysanan/HealthCare-File-Management" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+                        <a href="https://github.com/vuysanan/HealthCare-File-Management" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Typing Companion</h3>
-
-                        <p class="tech-stack"> C# | Random Passage Generation | WPM Calculation </p>
-
+                        <h3>The Recipe Book</h3>
+                        <p class="tech-stack">C# | Windows Forms | MySQL | UML | ERD</p>
                         <p class="description">
-                            Typing Companion is a console-based personal typing practice tool built to help you sharpen 
-                            your typing skills. It randomly selects passages from a user-defined text file, 
-                            providing a variety of reading material to work with. The application accurately tracks the 
-                            time taken to type each passage and calculates your WPM (words per minute) 
-                            and typing accuracy.
+                            A database-driven desktop application for categorizing and viewing recipes. 
+                            The project encompasses <strong>the development lifecycle</strong>, beginning with architectural 
+                            planning via a UML Use Case diagram and an Entity Relationship diagram. It features 
+                            a normalized MySQL database and dynamic UI data-binding.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/vuysanan/The-Recipe-Book" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Console Apps Section -->
+            <h3>Console Apps</h3>
+            <div class="horizontal-scroll">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Typing Companion</h3>
+                        <p class="tech-stack"> C# | File I/O | HashSet </p>
+                        <p class="description">
+                            A console-based typing practice tool to improve speed and accuracy. 
+                            Features robust <strong>File I/O</strong> for loading randomized passages and utilizes a <strong>HashSet</strong> for duplicate prevention.  
+                            The program uses the <strong>Stopwatch</strong> class for high-precision time tracking and WPM calculations.
                         </p>
                         <div class="project-links">
                             <a href="https://github.com/vuysanan/Typing-Companion" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="project-grid">
+
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Bug Tracking System</h3>
-
+                        <h3>Bug Tracker</h3>
                         <p class="tech-stack">C# | Custom Algorithms | File I/O</p>
-
                         <p class="description">
-                            A robust CLI application for managing software bug reports. 
-                            Features a custom implementation of <strong>QuickSort</strong> for organizing IDs 
-                            and <strong>Binary Search</strong> for O(log n) lookup speeds. 
-                            Includes a "Soft Delete" architecture to maintain database integrity 
-                            and persistent storage using text file parsing.
+                            A robust CLI application for managing software bug reports. Features a custom implementation 
+                            of <strong>QuickSort</strong> and <strong>Binary Search</strong> for O(log n) lookup speeds, 
+                            along with persistent storage using text file parsing.
                         </p>
-
                         <div class="project-links">
                             <a href="https://github.com/vuysanan/BugTracker---Console" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
                         </div>
@@ -93,23 +134,18 @@
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Generate & Test Passwords</h3>
-        
                         <p class="tech-stack">C# | Regex | Procedural Logic</p>
-        
                         <p class="description">
-                            Makes use of Random and StringBuilder classes to generate passwords.
-                            <strong>Procedural Programming</strong> patterns and <strong>Regular Expressions (Regex)</strong> 
-                            are utilized to validate security criteria including character diversity and length strings. 
-                            Features interactive user feedback loops and conditional scoring logic to assign strength ratings.
+                            A security tool utilizing <strong>Procedural Programming</strong> and <strong>Regex</strong> 
+                            to generate and validate passwords. Features interactive user feedback loops and conditional 
+                            scoring logic to assign strength ratings based on character diversity.
                         </p>
-        
                         <div class="project-links">
                             <a href="https://github.com/vuysanan/2nd-Project---Test-Password-Strength" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
     </main>
 

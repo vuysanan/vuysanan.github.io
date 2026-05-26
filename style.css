@@ -83,7 +83,51 @@ a:hover {
     margin-bottom: 60px;
 }
 
+/* --- Horizontal Scrolling Container --- */
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px; /* Prevents the scrollbar from overlapping the cards */
+    margin-bottom: 40px;
+    
+    /* Modern scrolling behavior */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Custom Webkit Scrollbar to match your theme */
+.horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-radius: 4px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* --- Project Cards (Updated for flex layout) --- */
 .project-card {
+    /* flex: grow shrink basis. The 320px basis stops them from squishing */
+    flex: 0 0 320px; 
+    scroll-snap-align: start; /* Snaps the card to the left edge when scrolling */
+    
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/*.project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 20px;
@@ -92,7 +136,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
+}*/
 
 .project-card:hover {
     transform: translateY(-5px);
@@ -118,6 +162,10 @@ a:hover {
 /* Set project card text to be muted */
 .description {
     color: var(--text-muted);
+}
+.description strong {
+    font-weight: bold; 
+    color: var(--text-color); /* Brings it back to the bright white/dark grey depending on theme */
 }
 
 .project-card h3 {
